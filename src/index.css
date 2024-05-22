@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer utilities{
+
+    /* HTML: <div class="loader"></div> */
+    .loader {
+        width: fit-content;
+        font-weight: bold;
+        margin: auto;
+        font-family: monospace;
+        font-size: 10px;
+        background:linear-gradient(90deg,#000 50%,#0000 0) right/200% 100%;
+        animation: l21 2s infinite linear;
+    }
+    .loader::before {
+        content :"Loading...";
+        color: #0000;
+        padding: 0 5px;
+        background: inherit;
+        background-image: linear-gradient(90deg,#fff 50%,#000 0);
+        -webkit-background-clip:text;
+                background-clip:text;
+    }
+    
+    @keyframes l21{
+        100%{background-position: left}
+    }
+
+    .header-font {
+        font-family: "Poetsen One", sans-serif;
+        font-style: normal;
+    }
+    .main-font {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+      }
+
+      @media only screen and (100px <= width <=  430px ) {
+        .main{
+            width: 90%;
+            margin-top: 125px;
+        }
+        .user_container{
+            flex-direction: column-reverse;
+            align-items: center;
+        }
+      }
+      
+}
